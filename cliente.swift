@@ -1,3 +1,6 @@
+import Foundation
+
+
 class cliente{
     var nombre:String
     var correo:String
@@ -13,32 +16,24 @@ class cliente{
         self.medidores = Array<medidor>()
     }
 
-    func mostrar_medidores() -> void {
-        var i = 0
-        while(i< medidores.count){
-            var tmp = medidores[i]
-            print("Id: \(tmp.id)")
-            print("Plan: \(tmp.plan.nombre)")
-            print("Volteos: \(tmp.cantV)")
+    func mostrar_medidores() -> Void {
+        for medi in medidores {
+            print("Id: \(medi.id)")
+            print("Plan: \(medi.plan.nombre)")
+            print("Volteos: \(medi.cantV)")
         }
     }
 
-    func mostrar_cobros(ide:String) ->void{
-        var med:medidor
-        var j = 0
-        while(j < medidores.size){
-            if(medidores[j].id == ide){
-                med = medidores[i]
+    func mostrar_cobros(ide:String) -> Void {
+        for me in medidores{
+            if(me.id == ide){
+                for cob in me.cobros {
+                print("Id: \(cob.identificador)")
+                print("Estado: \(cob.estado)")
+                print("Fecha: \(cob.fecha)")
+                print("Monto: \(cob.monto)")
+                }
             }
-            j += 1
-        }
-        var i = 0
-        while(i < med.cobros.size){
-            var temp = med.cobros
-            print("Id: \(temp.identificador)")
-            print("Estado: \(temp.estado)")
-            print("Fecha: \(tmp.fecha)")
-            print("Monto: \(tmp.monto)")
         }
     }
 
@@ -56,8 +51,8 @@ class medidor{
     init(id:String, plan:Plan){
         self.id = id
         self.plan = plan
-        cantV = 0
-        var cobros = Array<cobro>()
+        self.cantV = 0
+        self.cobros = Array<cobro>()
     }
 
 }
@@ -80,13 +75,14 @@ class Plan{
 class cobro{
     var identificador:Int
     var estado:String
-    var fecha:Date
+    var fecha:Date = Date()
     var monto:Int
 
-    init(identificador:Int, fecha:Date, monto:Int){
+    init(identificador:Int, estado:String, fecha:Date, monto:Int){
         self.identificador = identificador
         self.fecha = fecha
         self.monto = monto
+        self.estado = estado
     }
 }
 
@@ -96,7 +92,7 @@ class agente{
     var nombre:String
     var user:String
     var password:String
-    var apelaciones:Array<apelacion>
+    var apelaciones:Array<apelacion> = Array<apelacion>()
 
     init(nombre:String, user:String, password:String, apelaciones:Array<apelacion>){
         self.nombre = nombre
@@ -105,7 +101,7 @@ class agente{
         self.apelaciones = apelaciones
     }
 
-    func ver_cobros() -> void{
+    func ver_cobros() -> Void{
 
     }
 }
@@ -120,5 +116,9 @@ class apelacion{
         self.cliente = cliente
         self.medidor = medidor
         self.descripcion = descripcion
+        self.idApelacion = idApelacion
     }
 }
+
+
+
