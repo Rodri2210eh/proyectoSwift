@@ -13,6 +13,37 @@ class cliente{
         self.medidores = Array<medidor>()
     }
 
+    func mostrar_medidores() -> void {
+        var i = 0
+        while(i< medidores.count){
+            var tmp = medidores[i]
+            print("Id: \(tmp.id)")
+            print("Plan: \(tmp.plan.nombre)")
+            print("Volteos: \(tmp.cantV)")
+        }
+    }
+
+    func mostrar_cobros(ide:String) ->void{
+        var med:medidor
+        var j = 0
+        while(j < medidores.size){
+            if(medidores[j].id == ide){
+                med = medidores[i]
+            }
+            j += 1
+        }
+        var i = 0
+        while(i < med.cobros.size){
+            var temp = med.cobros
+            print("Id: \(temp.identificador)")
+            print("Estado: \(temp.estado)")
+            print("Fecha: \(tmp.fecha)")
+            print("Monto: \(tmp.monto)")
+        }
+    }
+
+
+
 }
 
 
@@ -31,9 +62,24 @@ class medidor{
 
 }
 
+class Plan{
+    var nombre:String
+    var cobroE:Int
+    var CobroPorVolteo:Int
+    var maximoV:Int
+
+    init(nombre:String, cobroE:Int, CobroPorVolteo:Int, maximoV:Int){
+        self.nombre = nombre
+        self.cobroE = cobroE
+        self.CobroPorVolteo = CobroPorVolteo
+        self.maximoV = maximoV
+    }
+}
+
 
 class cobro{
     var identificador:Int
+    var estado:String
     var fecha:Date
     var monto:Int
 
@@ -58,14 +104,19 @@ class agente{
         self.password = password
         self.apelaciones = apelaciones
     }
+
+    func ver_cobros() -> void{
+
+    }
 }
 
 class apelacion{
+    var idApelacion:Int
     var cliente:String
     var medidor:String
     var descripcion:String
 
-    init(cliente:String, medidor:String, descripcion:String){
+    init(idApelacion:Int, cliente:String, medidor:String, descripcion:String){
         self.cliente = cliente
         self.medidor = medidor
         self.descripcion = descripcion
