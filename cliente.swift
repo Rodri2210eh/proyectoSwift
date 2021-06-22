@@ -41,7 +41,6 @@ class cliente{
 
 }
 
-
 class medidor{
     var id:String
     var plan:Plan
@@ -72,8 +71,6 @@ class Plan{
     }
 }
 
-
-
 class cobro{
     var identificador:Int
     var estado:String
@@ -87,8 +84,6 @@ class cobro{
         self.estado = estado
     }
 }
-
-
 
 class agente{
     var nombre:String
@@ -108,7 +103,6 @@ class agente{
     }
 }
 
-
 class apelacion{
     var idApelacion:Int
     var cliente:String
@@ -122,6 +116,3 @@ class apelacion{
         self.idApelacion = idApelacion
     }
 }
-
-
-
