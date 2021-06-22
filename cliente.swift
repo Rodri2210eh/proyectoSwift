@@ -48,6 +48,7 @@ class cliente{
 
 }
 
+
 class medidor{
     var id:String
     var plan:Plan
@@ -61,16 +62,12 @@ class medidor{
         self.cobros = Array<cobro>()
     }
 
-<<<<<<< HEAD
 
     func agregarCobros(ident:Int, estado:String, fecha:Date, monto:Int){
         let c = cobro(identificador: ident,estado: estado,fecha: fecha,monto: monto)
         cobros.append(c)
     }
 
-=======
-    
->>>>>>> 50e9876bc2aa574327b76bc5be44e77545c4c554
 }
 
 class Plan{
@@ -87,6 +84,7 @@ class Plan{
     }
 }
 
+
 class cobro{
     var identificador:Int
     var estado:String
@@ -100,6 +98,8 @@ class cobro{
         self.estado = estado
     }
 }
+
+
 
 class agente{
     var nombre:String
@@ -132,7 +132,6 @@ class apelacion{
         self.idApelacion = idApelacion
     }
 }
-<<<<<<< HEAD
 
 var clientes:Array<cliente> = Array<cliente>()
 
@@ -234,5 +233,3 @@ while(t == 0){
 
 }
 
-=======
->>>>>>> 50e9876bc2aa574327b76bc5be44e77545c4c554
