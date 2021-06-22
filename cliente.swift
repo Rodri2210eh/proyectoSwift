@@ -55,6 +55,7 @@ class medidor{
         self.cobros = Array<cobro>()
     }
 
+    
 }
 
 class Plan{
@@ -70,6 +71,7 @@ class Plan{
         self.maximoV = maximoV
     }
 }
+
 
 
 class cobro{
@@ -105,6 +107,7 @@ class agente{
 
     }
 }
+
 
 class apelacion{
     var idApelacion:Int
