@@ -1,6 +1,5 @@
 import Foundation 
 
-
 // Clientes del CNFL
 var clientes:Array<cliente> = Array<cliente>()
 
