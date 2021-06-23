@@ -232,4 +232,3 @@ while(t == 0){
     print("Error en los datos vuelva a intentarlo")
 
 }
-
