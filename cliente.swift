@@ -2,12 +2,14 @@ import Foundation
 
 
 class cliente{
+    // Atributos
     var nombre:String
     var correo:String
     var username:String
     var password:String
     var medidores:Array<medidor>
 
+    // Initializer
     init (nombre:String, correo:String, username:String, password:String){
         self.nombre = nombre
         self.correo = correo
@@ -16,6 +18,7 @@ class cliente{
         self.medidores = Array<medidor>()
     }
 
+    // Función para mostrar medidores del cliente
     func mostrar_medidores() -> Void {
         var cont = 0
         for medi in medidores {
@@ -24,6 +27,7 @@ class cliente{
         }
     }
 
+    // Función para mostrar cobros sobre un medidor
     func mostrar_cobros(indice:Int) -> Void {
         var ind = 0
         for me in medidores{
@@ -39,6 +43,7 @@ class cliente{
         }
     }
 
+    // Función para agregar medidor
     func agregarMedidor(id:String, plan:Plan) -> Void{
         let m = medidor(id: id, plan: plan)
         medidores.append(m)
